@@ -1,0 +1,32 @@
+{
+  "name": "@rsksmart/rns-auction-registrar",
+  "version": "1.0.0",
+  "description": "RNS Auction Registrar",
+  "files": [
+    "/contracts",
+    "!/contracts/Migrations.sol"
+  ],
+  "scripts": {
+    "test": "truffle test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rnsdomains/rns-auction-registrar.git"
+  },
+  "keywords": [
+    "rsk",
+    "rif",
+    "rns"
+  ],
+  "author": "ilanolkies",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rnsdomains/rns-auction-registrar/issues"
+  },
+  "homepage": "https://github.com/rnsdomains/rns-auction-registrar#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^2.4.0",
+    "@rsksmart/erc677": "^1.0.0",
+    "@rsksmart/rns-registry": "^1.0.0"
+  }
+}
