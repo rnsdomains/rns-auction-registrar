@@ -1,6 +1,6 @@
 {
   "name": "@rsksmart/rns-auction-registrar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "RNS Auction Registrar",
   "files": [
     "/contracts",
@@ -26,7 +26,7 @@
   "homepage": "https://github.com/rnsdomains/rns-auction-registrar#readme",
   "dependencies": {
     "@openzeppelin/contracts": "^2.4.0",
-    "@rsksmart/erc677": "^1.0.0",
+    "@rsksmart/erc677": "^1.0.1",
     "@rsksmart/rns-registry": "^1.0.0"
   }
 }

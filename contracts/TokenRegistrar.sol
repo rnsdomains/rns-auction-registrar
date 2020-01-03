@@ -1,4 +1,4 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.5.3;
 
 
 /*
@@ -35,16 +35,17 @@ Case C: Any bid unsealed beyond the Late-Reveal period won't be refunded
 */
 
 
-import "./TokenDeed.sol";
-import "@rsksmart/rns-registry/contracts/RNS.sol";
-import "@rsksmart/erc677/contracts/IERC677.sol";
+import './TokenDeed.sol';
+import '@rsksmart/rns-registry/contracts/RNS.sol';
+import '@rsksmart/erc677/contracts/IERC677.sol';
+import '@rsksmart/erc677/contracts/ERC677TransferReceiver.sol';
 import "@openzeppelin/contracts/math/SafeMath.sol";
 
 /**
  * @title TokenRegistrar
  * @dev The registrar handles the auction process for each subnode of the node it owns.
  */
-contract TokenRegistrar {
+contract TokenRegistrar is ERC677TransferReceiver {
     using SafeMath for uint256;
 
     RNS public rns;
@@ -149,7 +150,7 @@ contract TokenRegistrar {
      * contains information about the bid, including the bidded hash, the bid amount, and a random
      * salt. Bids are not tied to any one auction until they are revealed. The value of the bid
      * itself can be masqueraded by sending more than the value of your actual bid. This is
-     * followed by a 48h reveal period. For bids revealed after this period, a percentage (defined in the late unsealing
+     * followed by a 48h reveal period. For bids revealed after this period, a percentage (defined in the late unsealing 
      * Refund schedule) will be sent to a special resource pool address.
      * Since this is an auction, it is expected that most public hashes, like known domains and common dictionary
      * words, will have multiple bidders pushing the price up.
@@ -434,7 +435,7 @@ contract TokenRegistrar {
      * @param _deed The TokenDeed object for the name being transferred in.
      * @param _registrationDate The date at which the name was originally registered.
      */
-    function acceptRegistrarTransfer(bytes32 _hash, TokenDeed _deed, uint _registrationDate) public pure {
+    function acceptRegistrarTransfer(bytes32 _hash, TokenDeed _deed, uint _registrationDate) public {
         _hash; _deed; _registrationDate; // Don't warn about unused variables
     }
 
