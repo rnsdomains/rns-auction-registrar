@@ -1,0 +1,6 @@
+{
+  "TokenRegistrar": {
+    "rskMainnet": "0x5269f5bc51cdd8aa62755c97229b7eeddd8e69a6",
+    "rskTestnet": "0x3d1a11c623bd21375f2b69f4eec814f4ceeb1d8d"
+  }
+}

@@ -1,2 +1,4 @@
 node_modules/
 build/
+TokenRegistrarData.json
+types/
